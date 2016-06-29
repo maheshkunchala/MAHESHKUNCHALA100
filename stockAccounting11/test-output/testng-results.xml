@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="4" failed="0" total="4" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="153" started-at="2016-06-27T02:41:58Z" finished-at="2016-06-27T02:41:58Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="153" started-at="2016-06-27T02:41:58Z" finished-at="2016-06-27T02:41:58Z">
+      <class name="com.stockAccounting.master.testNGstockunit">
+        <test-method status="SKIP" signature="stockAcc_UnitofMcreation()[pri:0, instance:com.stockAccounting.master.testNGstockunit@516651b7]" name="stockAcc_UnitofMcreation" duration-ms="2" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_UnitofMcreation -->
+      </class> <!-- com.stockAccounting.master.testNGstockunit -->
+      <class name="com.stockAccounting.master.testNGsuppliercreation">
+        <test-method status="FAIL" signature="stockAcc_Launch()[pri:0, instance:com.stockAccounting.master.testNGsuppliercreation@143d2a58]" name="stockAcc_Launch" is-config="true" duration-ms="0" started-at="2016-06-27T08:11:00Z" finished-at="2016-06-27T08:11:00Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+            <message>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
+System info: host: 'Q15245474', ip: '10.0.0.9', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: RemoteWebDriver
+Session ID: 8754e909-0bea-4681-8f64-fbbfd3ab2da6
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
+System info: host: 'Q15245474', ip: '10.0.0.9', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_79'
+Driver info: driver.version: RemoteWebDriver
+Session ID: 8754e909-0bea-4681-8f64-fbbfd3ab2da6
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at com.stockAccounting.master.testNG.stockAcc_Launch(testNG.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:298)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:162)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:160)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	... 23 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_Launch -->
+        <test-method status="SKIP" signature="stockAcc_Login()[pri:0, instance:com.stockAccounting.master.testNGsuppliercreation@143d2a58]" name="stockAcc_Login" is-config="true" duration-ms="0" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_Login -->
+        <test-method status="SKIP" signature="stockAcc_SupplierCreation()[pri:0, instance:com.stockAccounting.master.testNGsuppliercreation@143d2a58]" name="stockAcc_SupplierCreation" duration-ms="3" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_SupplierCreation -->
+        <test-method status="SKIP" signature="stockAcc_Logout()[pri:0, instance:com.stockAccounting.master.testNGsuppliercreation@143d2a58]" name="stockAcc_Logout" is-config="true" duration-ms="0" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_Logout -->
+        <test-method status="SKIP" signature="stockAcc_close()[pri:0, instance:com.stockAccounting.master.testNGsuppliercreation@143d2a58]" name="stockAcc_close" is-config="true" duration-ms="0" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_close -->
+      </class> <!-- com.stockAccounting.master.testNGsuppliercreation -->
+      <class name="com.stockAccounting.master.testNGstockitemcreation">
+        <test-method status="SKIP" signature="stockAcc_stockitems()[pri:0, instance:com.stockAccounting.master.testNGstockitemcreation@147eef21]" name="stockAcc_stockitems" duration-ms="2" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_stockitems -->
+      </class> <!-- com.stockAccounting.master.testNGstockitemcreation -->
+      <class name="com.stockAccounting.master.testNGStockCategory">
+        <test-method status="SKIP" signature="stockAcc_stockcatCreation()[pri:0, instance:com.stockAccounting.master.testNGStockCategory@3ba701c9]" name="stockAcc_stockcatCreation" duration-ms="2" started-at="2016-06-27T08:11:58Z" finished-at="2016-06-27T08:11:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stockAcc_stockcatCreation -->
+      </class> <!-- com.stockAccounting.master.testNGStockCategory -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

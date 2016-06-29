@@ -1,0 +1,49 @@
+package com.stockAccounting.master;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class uomdatadriven 
+{
+public static void main(String[]args) throws IOException 
+{
+	stockmaster1 sm=new stockmaster1();
+	String xlpath="D:\\Mahesh\\stockAccounting11\\src\\com\\stockAccounting\\testdata\\mahesh1.xlsx";
+	String xlres="D:\\Mahesh\\stockAccounting11\\src\\com\\stockAccounting\\results\\uomresult.xlsx";
+	FileInputStream fi=new FileInputStream(xlpath);
+    XSSFWorkbook wb=new XSSFWorkbook(fi);
+    XSSFSheet xs=wb.getSheet("sheet1");
+    
+    
+    int RC=xs.getLastRowNum();
+    sm.stockAcc_Launch(sm.url);
+    sm.stockAcc_Login(sm.uname, sm.pwd);
+   for(int i=1;i<=RC;i++)
+   {
+	XSSFRow R1=xs.getRow(i);
+	XSSFCell C1=R1.getCell(0);
+	XSSFCell C2=R1.getCell(1);
+	XSSFCell C3=R1.createCell(2);
+	
+	String UOMUID=C1.getStringCellValue();
+	String UOMDESC=C1.getStringCellValue();
+	System.out.println(UOMUID+"-----"+UOMDESC);
+	String res=sm.stockAcc_UnitofMcreation(UOMUID, UOMDESC);
+	C2.setCellValue(res);
+	
+}	
+FileOutputStream fo=new FileOutputStream(xlres);
+wb.write(fo);
+wb.close();
+sm.stockAcc_Logout();
+sm.stockAcc_Close();
+}
+}
+
+
+

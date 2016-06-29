@@ -1,0 +1,36 @@
+package com.stockAccounting.master;
+
+import java.awt.AWTException;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class testNGsuppliercreation extends testNG
+{
+	@Test
+
+	public void stockAcc_SupplierCreation(String supname,String add,String city,String cntry,String cperson,String pno,String email,String mno,String notes) 
+ 	{
+ 		expval="Add succeeded";
+ 		driver.findElement(By.linkText("Suppliers")).click();
+ 		driver.findElement(By.xpath(".//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a")).click();
+ 		driver.findElement(By.id("x_Supplier_Name")).sendKeys(supname);
+ 		driver.findElement(By.id("x_Address")).sendKeys(add);
+ 		driver.findElement(By.id("x_City")).sendKeys(city);
+ 		driver.findElement(By.id("x_Country")).sendKeys(cntry);
+ 		driver.findElement(By.id("x_Contact_Person")).sendKeys(cperson);
+ 		driver.findElement(By.id("x_Phone_Number")).sendKeys(pno);
+ 		driver.findElement(By.id("x__Email")).sendKeys(email);
+ 		driver.findElement(By.id("x_Mobile_Number")).sendKeys(mno);
+ 		driver.findElement(By.id("x_Notes")).sendKeys(notes);
+ 		driver.findElement(By.id("btnAction")).click();
+ 		 driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button")).click();
+	 		actval=driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[3]/div/div")).getText();
+	 		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+	 		driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button")).click();
+	 		Assert.assertEquals(actval, expval,"Supplier creation Failed");
+ 	}
+}
+	 	

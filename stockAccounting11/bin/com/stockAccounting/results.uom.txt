@@ -1,0 +1,7 @@
+Uid&Desc&Result
+U0000001&1 kg&Pass
+U0000002&100 kgs&Pass
+U0000003&1000kgs&Pass
+U0000004&1ton&Pass
+U0000005&1000tons&Pass
+U0000006&100000000kgs&Pass

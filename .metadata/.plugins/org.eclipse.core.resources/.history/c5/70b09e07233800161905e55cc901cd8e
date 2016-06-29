@@ -1,0 +1,110 @@
+package com.stockAccounting.master;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class testNG 
+{
+stockmaster1 sm=new stockmaster1();
+
+public static String url="http://webapp.qedgetech.com";
+public static WebDriver driver;
+public FileInputStream fi;
+public Properties pr;
+public static String expval,actval;
+@BeforeSuite
+public  void stockAcc_Launch() throws IOException
+{
+	
+	fi=new FileInputStream("D:\\Mahesh\\stockAccounting11\\src\\com\\stockAccounting\\properties\\stockAcc.properties");
+	pr=new Properties();
+	pr.load(fi);
+	expval="btnsubmit";
+	String br=pr.getProperty("browser");
+	if(br.equalsIgnoreCase("firefox"))
+	{
+		driver=new FirefoxDriver();
+	}
+	else if(br.equalsIgnoreCase("chrome"))
+	{
+		System.setProperty("WebDriver.chrome.driver", "D:\\Mahesh\\stockAccounting11\\src\\com\\stockAccounting\\Driver\\chromedriver.exe");
+		driver=new ChromeDriver();
+		
+	}
+	else if(br.equalsIgnoreCase("ie"))
+	{
+		System.setProperty("WebDriver.ie.driver", "D:\\Mahesh\\stockAccounting11\\src\\com\\stockAccounting\\Driver\\IEDriverServer.exe");
+		driver=new InternetExplorerDriver();
+	}
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		actval=driver.findElement(By.id("btnsubmit")).getAttribute("id");
+		Assert.assertEquals(actval, expval,"browser launch has Failed");
+	}
+
+@AfterSuite
+public void stockAcc_close()
+{
+	driver.close();
+}
+@BeforeTest
+public void stockAcc_login()
+{
+	    expval="pass";
+	    sm.stockAcc_Login("admin", "master");
+		Assert.assertEquals(actval, expval,"admin login has failed");
+}
+@AfterTest
+public void stockAcc_logout()
+{
+	   expval="pass";
+	    sm.stockAcc_Logout();
+	    Assert.assertEquals(actval, expval,"logout has failed");
+	    
+}
+@Test
+public void stockAcc_suppliercreation()
+{
+    expval="pass";
+	sm.stockAcc_SupplierCreation("MAhesh","WR NAGAR","Hyderabad","india","MAhesh","04000050422","MAhesh@gmail.com","9676846100","Mahesh");
+	Assert.assertEquals(actval, expval,"supplier creation has failed");
+	
+}
+@Test
+public void stockAcc_stockcategory()
+{
+	expval="pass";
+	sm.stockAcc_stockcatCreation("laptops");
+	Assert.assertEquals(actval, expval,"stock category creation has failed");
+	}
+@Test
+public void stockAcc_uom()
+{
+	expval="pass";
+	sm.stockAcc_UnitofMcreation("lap001","whitecolor");
+	Assert.assertEquals(actval, expval,"stock unit creation has failed");
+	}
+@Test
+public void stockAcc_items()
+{
+expval="pass";
+sm.stockAcc_stockitems("laptops", "mahesh", "lenovo", "lap001","25000","35000","any cost must");
+Assert.assertEquals(actval,expval,"stock items creation has failed");
+}
+}

@@ -1,0 +1,35 @@
+package com.stockAccounting.master;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class testNGstockitemcreation extends testNG
+{
+	@Test
+	public void stockAcc_stockitems()
+ 	{
+ 		String expval="Add succeeded";
+		String actval;
+		driver.findElement(By.linkText("Stock Items")).click();
+		driver.findElement(By.xpath(".//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a")).click();
+		driver.findElement(By.id("aol_x_Category")).click();
+		driver.findElement(By.id("x_Category_Name")).sendKeys("shoes");
+		driver.findElement(By.xpath(".//*[@id='ewAddOptDialog']/div/div/div[3]/button[1]")).click();
+		driver.findElement(By.id("x_Supplier_Number")).sendKeys("mahesh");
+		driver.findElement(By.id("x_Stock_Name")).sendKeys("laptops");
+        driver.findElement(By.id("x_Unit_Of_Measurement")).sendKeys("n114");
+        driver.findElement(By.id("x_Purchasing_Price")).sendKeys("5000");
+        driver.findElement(By.id("x_Selling_Price")).sendKeys("10000");
+        driver.findElement(By.id("x_Notes")).sendKeys("mahesh");
+        driver.findElement(By.id("btnAction")).click();
+        driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button")).click();
+ 		actval=driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[3]/div/div")).getText();
+ 		driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+ 		driver.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button")).click();
+ 		Assert.assertEquals(actval, expval,"stock item creation has failed");
+
+}
+}

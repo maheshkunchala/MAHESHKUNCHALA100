@@ -1,0 +1,42 @@
+package com.stockAccounting.master;
+
+public class logintest
+{
+	
+		public static void main(String[] args) 
+		{
+			stockmaster1 sm=new stockmaster1();
+			String res=sm.stockAcc_Launch(sm.url);
+			System.out.println(res);
+			
+			res=sm.stockAcc_Login("admin", "master");
+			System.out.println(res);
+			
+			res=sm.stockAcc_SupplierCreation("MAhesh","WR NAGAR","Hyderabad","india","MAhesh","04000050422","MAhesh@gmail.com","9676846100","Mahesh");
+			System.out.println(res);
+
+			res=sm.stockAcc_stockcatCreation("Watches");
+			System.out.println(res);
+			
+			res=sm.stockAcc_UnitofMcreation("khk45", "mahesh");
+			System.out.println(res);
+			
+			res=sm.stockAcc_stockitems("books", "mahesh", "Dell", "book123", "1000", "1500", "mahesh");
+			System.out.println(res);
+			
+						
+			res=sm.stockAcc_Logout();
+			System.out.println(res);
+			
+			res=sm.stockAcc_Close();
+			
+	
+			
+			
+			
+			
+			
+
+		}
+
+}

@@ -1,0 +1,78 @@
+################################StockAccounting Property file###################################
+driver=firefox
+
+
+#id property of the username field
+username=username
+
+#id property of the password field
+password=password
+
+#id property of the login button
+login=btnsubmit
+
+#id property of the reset button
+reset=btnreset
+
+#link property of the forgot password 
+forgotpassword=Forgot Password
+
+#link Property of the register
+register=Register
+
+#xpath of the administrator
+administrator=.//*[@id='msUserName']/font/strong
+
+#id property of the logout
+logout=logout
+
+#xpath of the ok
+ok=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+
+#xpath of the suppliers
+suppliers=.//*[@id='mi_a_suppliers']/a
+
+#xpath of the add button
+add=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a/span
+
+#id property of the supplier name
+supname=x_Supplier_Name
+
+#id property of the supplier address
+supadd=x_Address
+
+#id property of the supplier city
+supcity=x_City
+
+#id property of the supplier country
+supcounrty=x_Country
+
+#id property of the supplier contact person
+contact=x_Contact_Person
+
+#id property of the supplier phone number
+phone=x_Phone_Number
+
+#id property of supplier Email
+mail=x__Email
+
+#id property of the supplier mobile
+mobile=x_Mobile_Number
+
+#id property of the supplier notes
+note=x_Notes
+
+#id property of the supplier adding
+adding=btnAction
+
+#xpath of the suppliers new adding ok button
+okbutton=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+
+#xpath of the supplier add success
+addsuccess=html/body/div[3]/div[2]/div/div[3]/div/div
+
+#xpath of the supplier add success ok button
+succok=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+
+#id property of the supplier
+suppiler=ewPageCaption 
